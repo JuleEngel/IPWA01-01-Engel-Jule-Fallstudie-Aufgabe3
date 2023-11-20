@@ -57,8 +57,11 @@
       <div class="container text-center">
         <h1>Kleiderspende Hamburg</h1>
         <img src="./images/3.jpg" alt="kleiderspende-hamburg" width="200">
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti tempora nulla optio quia maiores velit officia officiis beatae assumenda? Quo voluptas quae praesentium odit maiores impedit ipsum illo voluptates repellendus?</p>
-        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestiae id pariatur modi ipsum assumenda? Laborum inventore numquam sit dolores maiores, veniam hic voluptatem qui maxime eveniet quia modi dolor! Rem?</p>
+        <p>Willkommen bei Kleiderspende Hamburg!</p>
+        <p>Wir freuen uns, Sie auf unserer Website begrüßen zu dürfen. Als gemeinnützige Organisation setzen wir uns dafür ein, Menschen in Notlagen zu unterstützen. Ihre Kleiderspenden spielen dabei eine wichtige Rolle.</p>
+        <p>Kleiderspende Hamburg sammelt Kleidung, um sie an bedürftige Menschen weiterzugeben. Ihre großzügigen Spenden helfen uns, einen positiven Einfluss in unserer Gemeinschaft zu haben.</p>
+        <p>Wenn Sie Kleidung spenden möchten, nuutzen Sie das Registrierungsformular im unteren Bereich der Seite. Dort können Sie die erforderlichen Informationen eingeben. Wir setzen uns dann mit Ihnen in Verbindung, um die Details für die Kleiderspende zu klären.</p>
+        <p>Vielen Dank für Ihre Unterstützung!</p>
       </div>
       <br>
       <br>
@@ -66,11 +69,7 @@
         <h1>Registrierung:</h1>
         <br>
 
-
-
-
-
-
+<!--Erstellung des Formulars für die Registrierung-->
         <form action="TODO" method="POST" enctype="multipart/form-data">
           <h5>Informationen zu Ihrer Person: </h5>
           <div class="mb-3">
@@ -103,6 +102,7 @@
             <input type="number" id="anzahl" min="0" value="0">
           </div>
           <br>
+
           <h5>Welche Arten von Kleidungsstücken wollen Sie spenden?</h5>
           <div class="mb-3 d-flex flex-wrap justify-content-center flex-column flex-sm-row align-items-center">
             <div class="form-check me-4">
@@ -151,6 +151,7 @@
               </div>
           </div>
           <br>
+
           <h5>In welches Kriesengebiet soll die Kleidung geschickt werden?</h5>
           <div class="form-floating">
             <select id="krisengebiet" class="form-select text-center">
@@ -169,25 +170,29 @@
             </select>
           </div>
           <br>
-
-
-
-            <label for="subscribe">subscribe</label>
-            <input type="checkbox" id="subscribe"> <br>
-
-            <label for="comment">comment</label>
-            <textarea id="comment" rows="3" cols="25"></textarea>
-            <br><br>
-
-            <label for="file">file</label>
-            <input type="file" id="comment" accept="image/png,image/jped">
-            <br><br>
+          <div>
+            <h5>Wollen Sie unseren Sammeldienst nutzen?</h5>
 
             <br>
-            <button type="reset" class="btn btn-outline-secondary btn-sm">Zurücksetzen</button>
+          </div>
+
+
+          <div>
+            <h5>Möchten Sie uns noch etwas mitteilen?</h5>
+            <textarea id="comment" rows="3" cols="25"></textarea>
             <br><br>
-            <!-- Bevor man die Daten absenden kann, wird überprüft, ob eine Kleidung zum Spenden ausgewählt wurde. -->
-            <button type="submit" class="btn btn-primary">Submit</button>
+          </div>
+
+          <div>
+            <span class="me-3">Möchten Sie von uns per Mail auf dem Laufenden gehalten werden?</span>
+            <input type="checkbox" id="subscribe"> <br>
+          </div>
+
+          <br>
+          <button type="reset" class="btn btn-outline-secondary btn-sm">Zurücksetzen</button>
+          <br><br>
+          <!-- Bevor man die Daten absenden kann, wird überprüft, ob eine Kleidung zum Spenden ausgewählt wurde. -->
+          <button type="submit" class="btn btn-primary">Submit</button>
         </form>
 
 
