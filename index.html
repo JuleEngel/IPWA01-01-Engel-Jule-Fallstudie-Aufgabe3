@@ -53,8 +53,150 @@
 
 
     <main>
-      <img src="./images/4-LOGO.png" alt="LOGO-Kleiderspende" class="rounded img" width="10%">
-      Kleiderspende Hamburg</a>
+      <br>
+      <div class="container text-center">
+        <h1>Kleiderspende Hamburg</h1>
+        <img src="./images/3.jpg" alt="kleiderspende-hamburg" width="200">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti tempora nulla optio quia maiores velit officia officiis beatae assumenda? Quo voluptas quae praesentium odit maiores impedit ipsum illo voluptates repellendus?</p>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestiae id pariatur modi ipsum assumenda? Laborum inventore numquam sit dolores maiores, veniam hic voluptatem qui maxime eveniet quia modi dolor! Rem?</p>
+      </div>
+      <br>
+      <br>
+      <div class="container text-center">
+        <h1>Registrierung:</h1>
+        <br>
+
+
+
+
+
+
+        <form action="registriert.html" method="POST" enctype="multipart/form-data">
+          <h5>Informationen zu Ihrer Person: </h5>
+          <div class="mb-3">
+            <label for="title" class="me-2">Titel: </label>
+            <label for="mr">Mr</label>
+            <input type="radio" id="mr" class="me-2" value="mr" name="title">
+            <label for="mrs">Mrs</label>
+            <input type="radio" id="Mrs" name="title">
+          </div>
+          <div class="mb-3">
+            <label for="username" class="form-label">Vorname: </label>
+            <input type="text" id="vorname"
+            placeholder="Max"
+            required> 
+          </div>
+          <div class="mb-3">
+            <label for="username">Nachname: </label>
+            <input type="text" id="nachname"
+            placeholder="Mustermann"
+            required> 
+          </div>
+          <div class="mb-3">
+            <label for="email">E-Mail-Adresse: </label>
+            <input type="email" id="email" placeholder="mustermann@gmail.com" required>
+          </div>
+          <br>
+
+          <h5>Wie viele Kleidungsstück wollen Sie spenden?</h5>
+          <div class="mb-3">
+            <input type="number" id="anzahl" min="0" value="0">
+          </div>
+          <br>
+          <h5>Welche Arten von Kleidungsstücken wollen Sie spenden?</h5>
+          <div class="mb-3 d-flex flex-wrap justify-content-center flex-column flex-sm-row align-items-center">
+            <div class="form-check me-4">
+                  <input class="form-check-input" type="checkbox" id="pulloverCheckbox">
+                  <label class="form-check-label" for="pulloverCheckbox">Pullover</label>
+              </div>
+          
+              <div class="form-check me-4">
+                  <input class="form-check-input" type="checkbox" id="tshirtCheckbox">
+                  <label class="form-check-label" for="tshirtCheckbox">T-Shirt</label>
+              </div>
+          
+              <div class="form-check me-4">
+                  <input class="form-check-input" type="checkbox" id="jackeCheckbox">
+                  <label class="form-check-label" for="jackeCheckbox">Jacke</label>
+              </div>
+          
+              <div class="form-check me-4">
+                  <input class="form-check-input" type="checkbox" id="hoseCheckbox">
+                  <label class="form-check-label" for="hoseCheckbox">Hose</label>
+              </div>
+          
+              <div class="form-check me-4">
+                  <input class="form-check-input" type="checkbox" id="schuheCheckbox">
+                  <label class="form-check-label" for="schuheCheckbox">Schuhe</label>
+              </div>
+          
+              <div class="form-check me-4">
+                  <input class="form-check-input" type="checkbox" id="sockenCheckbox">
+                  <label class="form-check-label" for="sockenCheckbox">Socken</label>
+              </div>
+          
+              <div class="form-check me-4">
+                  <input class="form-check-input" type="checkbox" id="deckenCheckbox">
+                  <label class="form-check-label" for="deckenCheckbox">Decken</label>
+              </div>
+          
+              <div class="form-check me-4">
+                  <input class="form-check-input" type="checkbox" id="kissenCheckbox">
+                  <label class="form-check-label" for="kissenCheckbox">Kissen</label>
+              </div>
+          
+              <div class="form-check me-4">
+                  <input class="form-check-input" type="checkbox" id="sonstigesCheckbox" checked>
+                  <label class="form-check-label" for="sonstigesCheckbox">Sonstiges</label>
+              </div>
+          </div>
+          <br>
+          <h5>In welches Kriesengebiet soll die Kleidung geschickt werden?</h5>
+          <div class="form-floating">
+            <select id="krisengebiet" class="form-select text-center">
+                <option value="unbestimmt">Unbestimmtes Gebiet</option>
+                <option value="afghanistan">Afghanistan</option>
+                <option value="irak">Irak</option>
+                <option value="iran">Iran</option>
+                <option value="jemen">Jemen</option>
+                <option value="libanon">Libanon</option>
+                <option value="libyen">Libyen</option>
+                <option value="mali">Mali</option>
+                <option value="niger">Niger</option>
+                <option value="sudan">Sudan</option>
+                <option value="syrien">Syrien</option>
+                <option value="ukraine">Ukraine</option>
+            </select>
+          </div>
+          <br>
+
+
+
+            <label for="subscribe">subscribe</label>
+            <input type="checkbox" id="subscribe"> <br>
+
+            <label for="comment">comment</label>
+            <textarea id="comment" rows="3" cols="25"></textarea>
+            <br><br>
+
+            <label for="file">file</label>
+            <input type="file" id="comment" accept="image/png,image/jped">
+            <br><br>
+
+            <br>
+            <button type="reset" class="btn btn-outline-secondary btn-sm">Zurücksetzen</button>
+            <br><br>
+            <!-- Bevor man die Daten absenden kann, wird überprüft, ob eine Kleidung zum Spenden ausgewählt wurde. -->
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+
+
+
+
+
+
+      </div>
+      <br>
     </main>
 
 
@@ -97,5 +239,6 @@
             </div>
         </div>
   </footer>
+  <script src="index.js"></script>
 </body>
 </html>
