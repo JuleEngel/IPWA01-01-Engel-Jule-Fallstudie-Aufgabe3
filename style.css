@@ -1,0 +1,14 @@
+@media (max-width: 768px) { /* Optische Größenanpassung der Navigations-Leiste für mobile Endgeräte */
+    .navbar-brand {
+      font-size: 18px;
+    }
+    #logo {
+      max-width: 30px; 
+      height: auto;
+      display: inline-block;
+      vertical-align: middle;
+    }
+    .navbar-toggler-icon {
+      font-size: 0.8rem;
+    }
+  }
