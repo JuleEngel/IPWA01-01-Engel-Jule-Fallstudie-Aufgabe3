@@ -35,3 +35,8 @@
     align-items: center;
     flex-wrap: wrap; /* Falls der Inhalt auf kleinen Bildschirmen gestapelt werden soll */
   }
+
+  #krisengebiet {
+    font-size: 20px;
+    padding:6px;
+  }
