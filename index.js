@@ -8,6 +8,7 @@ function anzeigeSammeldienst() {
     let nummer = document.getElementById('nummer');
     let plz = document.getElementById('plz');
     let ort = document.getElementById('ort');
+    let phone = document.getElementById(`phone`);
 
     if (sammeldienstChecked) {
       sammeldienstAktiv.style.display = 'block';
@@ -16,6 +17,7 @@ function anzeigeSammeldienst() {
       nummer.required = true;
       plz.required = true;
       ort.required = true;
+      phone.required = true;
     } else {
       //Setze Input-Felder für die Adressen zurück, da diese nun nicht mehr benötigt werden
       sammeldienstAktiv.style.display = 'none';
@@ -29,6 +31,7 @@ function anzeigeSammeldienst() {
       plz.setCustomValidity('');
       ort.required = false;
       ort.value = "";
+      phone.required = false;
     }
 }
 
