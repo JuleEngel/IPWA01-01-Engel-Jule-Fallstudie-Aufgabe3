@@ -12,7 +12,7 @@ function anzeigeSammeldienst() {
     if (sammeldienstChecked) {
       sammeldienstAktiv.style.display = 'block';
       abgabeAktiv.style.display = `none`;
-      straße.required = true;
+      strasse.required = true;
       nummer.required = true;
       plz.required = true;
       ort.required = true;
