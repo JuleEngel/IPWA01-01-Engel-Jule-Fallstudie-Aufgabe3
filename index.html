@@ -65,97 +65,110 @@
       </div>
       <br>
       <br>
+      <br>
       <div class="container text-center">
         <h1>Registrierung:</h1>
         <br>
 
 <!--Erstellung des Formulars für die Registrierung-->
-        <form action="TODO" method="POST" enctype="multipart/form-data">
+        <form class="row g-3 needs-validation" novalidate action="TODO" method="POST" enctype="multipart/form-data" id="registrierungsFormular">
           <h5>Informationen zu Ihrer Person: </h5>
-          <div class="mb-3">
+          <div>
             <label for="title" class="me-2">Titel: </label>
             <label for="mr">Mr</label>
             <input type="radio" id="mr" class="me-2" value="mr" name="title">
             <label for="mrs">Mrs</label>
             <input type="radio" id="Mrs" name="title">
           </div>
+
           <div class="mb-3">
-            <label for="username" class="form-label">Vorname: </label>
-            <input type="text" id="vorname"
-            placeholder="Max"
-            required> 
+            <label for="vorname" class="form-label">Vorname: </label>
+            <input type="text" id="vorname" placeholder="Max" class="form-control mb-2 text-center" required>
+            <div class="invalid-feedback">
+              Bitte tragen Sie hier Ihren Namen ein!
+            </div>       
           </div>
+
           <div class="mb-3">
-            <label for="username">Nachname: </label>
-            <input type="text" id="nachname"
-            placeholder="Mustermann"
-            required> 
+            <label for="nachname" class="me-2">Nachname: </label>
+            <input type="text" id="nachname" placeholder="Mustermann" class="form-control mb-2 text-center" required> 
+            <div class="invalid-feedback">
+              Bitte tragen Sie hier Ihren Nachnamen ein!
+            </div>
           </div>
+
           <div class="mb-3">
-            <label for="email">E-Mail-Adresse: </label>
-            <input type="email" id="email" placeholder="mustermann@gmail.com" required>
+            <label for="email" class="me-2">E-Mail-Adresse: </label>
+            <input type="email" id="email" placeholder="mustermann@gmail.com" class="form-control mb-2 text-center" required>
+            <div class="invalid-feedback">
+              Bitte tragen Sie hier eine gültige E-Mail-Adresse ein, damit wir Sie kontaktieren können!
+            </div>
           </div>
           <br>
 
-          <h5>Wie viele Kleidungsstück wollen Sie spenden?</h5>
+          <h5>Wie viele Pakete / Tüten mit Kleidung wollen Sie spenden?</h5>
           <div class="mb-3">
-            <input type="number" id="anzahl" min="0" value="0">
+            <input type="number" id="anzahl" min="1" value="0" required>
+            <div class="invalid-feedback">
+              Bitte wählen Sie eine Anzahl an Paketen aus!
+            </div>
           </div>
           <br>
 
           <h5>Welche Arten von Kleidungsstücken wollen Sie spenden?</h5>
           <div class="mb-3 d-flex flex-wrap justify-content-center flex-column flex-sm-row align-items-center">
             <div class="form-check me-4">
-                  <input class="form-check-input" type="checkbox" id="pulloverCheckbox">
+                  <input class="form-check-input" type="checkbox" name="kleiderCheckboxes">
                   <label class="form-check-label" for="pulloverCheckbox">Pullover</label>
               </div>
           
               <div class="form-check me-4">
-                  <input class="form-check-input" type="checkbox" id="tshirtCheckbox">
+                  <input class="form-check-input" type="checkbox" name="kleiderCheckboxes">
                   <label class="form-check-label" for="tshirtCheckbox">T-Shirt</label>
               </div>
           
               <div class="form-check me-4">
-                  <input class="form-check-input" type="checkbox" id="jackeCheckbox">
+                  <input class="form-check-input" type="checkbox" name="kleiderCheckboxes">
                   <label class="form-check-label" for="jackeCheckbox">Jacke</label>
               </div>
           
               <div class="form-check me-4">
-                  <input class="form-check-input" type="checkbox" id="hoseCheckbox">
+                  <input class="form-check-input" type="checkbox" name="kleiderCheckboxes">
                   <label class="form-check-label" for="hoseCheckbox">Hose</label>
               </div>
           
               <div class="form-check me-4">
-                  <input class="form-check-input" type="checkbox" id="schuheCheckbox">
+                  <input class="form-check-input" type="checkbox" name="kleiderCheckboxes">
                   <label class="form-check-label" for="schuheCheckbox">Schuhe</label>
               </div>
           
               <div class="form-check me-4">
-                  <input class="form-check-input" type="checkbox" id="sockenCheckbox">
+                  <input class="form-check-input" type="checkbox" name="kleiderCheckboxes">
                   <label class="form-check-label" for="sockenCheckbox">Socken</label>
               </div>
           
               <div class="form-check me-4">
-                  <input class="form-check-input" type="checkbox" id="deckenCheckbox">
+                  <input class="form-check-input" type="checkbox" name="kleiderCheckboxes">
                   <label class="form-check-label" for="deckenCheckbox">Decken</label>
               </div>
           
               <div class="form-check me-4">
-                  <input class="form-check-input" type="checkbox" id="kissenCheckbox">
+                  <input class="form-check-input" type="checkbox" name="kleiderCheckboxes">
                   <label class="form-check-label" for="kissenCheckbox">Kissen</label>
               </div>
           
               <div class="form-check me-4">
-                  <input class="form-check-input" type="checkbox" id="sonstigesCheckbox" checked>
+                  <input class="form-check-input" type="checkbox" name="kleiderCheckboxes">
                   <label class="form-check-label" for="sonstigesCheckbox">Sonstiges</label>
               </div>
           </div>
           <br>
 
           <h5>In welches Kriesengebiet soll die Kleidung geschickt werden?</h5>
+          <p style="margin: 0;">Wenn "Keine Angabe" ausgewählt ist, schicken wir das Paket dahin, wo es derzeit am meisten gebraucht wird!</p>
           <div class="form-floating">
             <select id="krisengebiet" class="form-select text-center">
-                <option value="unbestimmt">Unbestimmtes Gebiet</option>
+                <option value="unbestimmt">Keine Angabe</option>
                 <option value="afghanistan">Afghanistan</option>
                 <option value="irak">Irak</option>
                 <option value="iran">Iran</option>
@@ -172,34 +185,80 @@
           <br>
           <div>
             <h5>Wollen Sie unseren Sammeldienst nutzen?</h5>
-
-            <br>
+            <div>
+              <!--Auswahl der Checkboxen sorgt dafür, dass jeweils passender Inhalt eingeblendet wird. 
+              Standardmäßig ist Abgabe im Shop ausgewählt, da dies aus Sicht der Firma sinnvoller erscheint.-->
+              <label for="sammeldienst">Sammeldienst</label>
+              <input type="radio" id="sammeldienst" class="me-4" name="sammeldienst-abfrage" onchange="anzeigeSammeldienst()" >
+              <label for="abgabe">Abgabe im Shop</label>
+              <input type="radio" id="abgabe" name="sammeldienst-abfrage" onchange="anzeigeSammeldienst()" checked>
+              <br>
+              <br>
+              <div id="sammeldienstAktiv" style="display: none;">
+                <h5>Ihre Adresse:</h5>
+                <div class="flex-container row">
+                    <div class="col-md-6">
+                        <label for="strasse">Straße: </label>
+                        <input type="text" id="strasse" placeholder="Musterstraße" class="form-control mb-2 text-center">
+                        <div class="invalid-feedback">
+                          Bitte tragen Sie hier Ihre Straße ein!
+                        </div>   
+                    </div>
+                    <div class="col-md-6">
+                        <label for="nummer">Nr: </label>
+                        <input type="text" id="nummer" placeholder="12b" class="form-control mb-2 text-center"> 
+                        <div class="invalid-feedback">
+                          Bitte tragen Sie hier Ihre Hausnummer ein!
+                        </div>  
+                    </div>
+                    <div class="col-md-6">
+                        <label for="plz">Postleitzahl: </label>
+                        <input type="text" id="plz" placeholder="20095" class="form-control mb-2 text-center" minlength="5" maxlength="5" oninput="validatePLZ(this.value, this)">
+                        <div class="invalid-feedback">
+                          Die PLZ muss in 20--- Hamburg liegen, damit wir Ihre Spende abholen können!
+                        </div>  
+                    </div>
+                    <div class="col-md-6">
+                        <label for="ort">Stadt: </label>
+                        <input type="text" id="ort" placeholder="Hamburg" class="form-control mb-2 text-center"> 
+                        <div class="invalid-feedback">
+                          Bitte tragen Sie hier Ihre Stadt ein!
+                        </div>  
+                    </div>
+                </div>
+            </div>
+              <div id="abgabeAktiv">
+                <i>Unsere Abgabestelle befindet sich in der Musterstraße 123, 20095 Hamburg. Die Öffnungszeiten sind Mo.- Sa. 10-17 Uhr.</i>
+              </div>
+            </div>
           </div>
-
-
+          <br>
           <div>
             <h5>Möchten Sie uns noch etwas mitteilen?</h5>
             <textarea id="comment" rows="3" cols="25"></textarea>
             <br><br>
           </div>
-
           <div>
-            <span class="me-3">Möchten Sie von uns per Mail auf dem Laufenden gehalten werden?</span>
+            <label for="subscribe" class="me-3">Möchten Sie von uns per Mail auf dem Laufenden gehalten werden?</label>
             <input type="checkbox" id="subscribe"> <br>
           </div>
-
           <br>
-          <button type="reset" class="btn btn-outline-secondary btn-sm">Zurücksetzen</button>
-          <br><br>
-          <!-- Bevor man die Daten absenden kann, wird überprüft, ob eine Kleidung zum Spenden ausgewählt wurde. -->
-          <button type="submit" class="btn btn-primary">Submit</button>
+          <div class="col-12">
+            <div class="form-check">
+              <label for="invalidCheck" class="me-3"> Hiermit stimmen Sie unseren Vereinbarungen zum <a class="link" href="#">Datenschutz</a> zu </label>
+              <input type="checkbox" value="" id="invalidCheck" required>
+              <div class="invalid-feedback">
+                Sie müssen den Vereinbarungen zustimmen, um eine Spende zu registrieren!
+              </div>
+            </div>
+          </div>
+          <br>
+          <button type="button" class="btn btn-outline-secondary btn-sm" onclick="resetForm()">Zurücksetzen</button>
+          <br>
+          <button type="submit" class="btn btn-primary" onclick="validateCheckboxes()">Registrieren</button>
+          <br>
+          <br>
         </form>
-
-
-
-
-
-
       </div>
       <br>
     </main>
