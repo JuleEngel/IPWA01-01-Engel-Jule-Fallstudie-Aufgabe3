@@ -74,19 +74,19 @@
         <br>
 
 <!--Erstellung des Formulars für die Registrierung-->
-        <form class="row g-3 needs-validation" novalidate action="TODO" method="POST" enctype="multipart/form-data" id="registrierungsFormular">
+        <form class="row g-3 needs-validation" enctype="multipart/form-data" id="registrierungsFormular" novalidate>
           <h5>Informationen zu Ihrer Person: </h5>
           <div>
             <label for="title" class="me-2">Titel: </label>
             <label for="mr">Mr</label>
-            <input type="radio" id="mr" class="me-2" value="mr" name="title">
+            <input type="radio" id="mr" class="me-2" value="mr" name="title" checked>
             <label for="mrs">Mrs</label>
-            <input type="radio" id="Mrs" name="title">
+            <input type="radio" id="mrs" value="mrs" name="title">
           </div>
 
           <div class="mb-3">
             <label for="vorname" class="form-label">Vorname: * </label>
-            <input type="text" id="vorname" placeholder="Max" class="form-control mb-2 text-center" required>
+            <input type="text" id="vorname" name="vorname" placeholder="Max" class="form-control mb-2 text-center" required>
             <div class="invalid-feedback">
               Bitte tragen Sie hier Ihren Namen ein!
             </div>       
@@ -94,7 +94,7 @@
 
           <div class="mb-3">
             <label for="nachname" class="me-2">Nachname: *</label>
-            <input type="text" id="nachname" placeholder="Mustermann" class="form-control mb-2 text-center" required> 
+            <input type="text" id="nachname" name="nachname" placeholder="Mustermann" class="form-control mb-2 text-center" required> 
             <div class="invalid-feedback">
               Bitte tragen Sie hier Ihren Nachnamen ein!
             </div>
@@ -102,7 +102,7 @@
 
           <div class="mb-3">
             <label for="email" class="me-2">E-Mail-Adresse: *</label>
-            <input type="email" id="email" placeholder="mustermann@gmail.com" class="form-control mb-2 text-center" required>
+            <input type="email" id="email" name="email" placeholder="mustermann@gmail.com" class="form-control mb-2 text-center" required>
             <div class="invalid-feedback">
               Bitte tragen Sie hier eine gültige E-Mail-Adresse ein, damit wir Sie kontaktieren können!
             </div>
@@ -110,7 +110,7 @@
 
           <div class="mb-3">
             <label for="phone" class="me-2">Telefon-Nummer: </label>
-            <input type="tel" id="phone" placeholder="01577 0123456" class="form-control mb-2 text-center" pattern="[0-9]+">
+            <input type="tel" id="phone" name="phone" placeholder="01577 0123456" class="form-control mb-2 text-center" pattern="[0-9]+">
             <div class="invalid-feedback">
               Bitte tragen Sie hier eine gültige Telefon-Nummer ein, damit wir Sie kontaktieren können!
             </div>
@@ -119,7 +119,7 @@
 
           <h5>Wie viele Pakete / Tüten mit Kleidung wollen Sie spenden? *</h5>
           <div class="mb-3">
-            <input type="number" id="anzahl" min="1" value="0" required>
+            <input type="number" id="anzahl" name="anzahl" min="1" value="0" required>
             <div class="invalid-feedback">
               Bitte wählen Sie eine Anzahl an Paketen aus!
             </div>
@@ -129,47 +129,47 @@
           <h5>Welche Arten von Kleidungsstücken wollen Sie spenden? *</h5>
           <div class="mb-3 d-flex flex-wrap justify-content-center flex-column flex-sm-row align-items-center">
             <div class="form-check me-4">
-                  <input class="form-check-input" type="checkbox" name="kleiderCheckboxes">
+                  <input class="form-check-input" value="pullover" id="pulloverCheckbox" type="checkbox" name="kleiderCheckboxes">
                   <label class="form-check-label" for="pulloverCheckbox">Pullover</label>
               </div>
           
               <div class="form-check me-4">
-                  <input class="form-check-input" type="checkbox" name="kleiderCheckboxes">
+                  <input class="form-check-input" value="t-shirt" id="tshirtCheckbox" type="checkbox" name="kleiderCheckboxes">
                   <label class="form-check-label" for="tshirtCheckbox">T-Shirt</label>
               </div>
           
               <div class="form-check me-4">
-                  <input class="form-check-input" type="checkbox" name="kleiderCheckboxes">
+                  <input class="form-check-input" value="jacke" id="jackeCheckbox" type="checkbox" name="kleiderCheckboxes">
                   <label class="form-check-label" for="jackeCheckbox">Jacke</label>
               </div>
           
               <div class="form-check me-4">
-                  <input class="form-check-input" type="checkbox" name="kleiderCheckboxes">
+                  <input class="form-check-input" value="hose" id="hoseCheckbox" type="checkbox" name="kleiderCheckboxes">
                   <label class="form-check-label" for="hoseCheckbox">Hose</label>
               </div>
           
               <div class="form-check me-4">
-                  <input class="form-check-input" type="checkbox" name="kleiderCheckboxes">
+                  <input class="form-check-input" value="schuhe" id="schuheCheckbox" type="checkbox" name="kleiderCheckboxes">
                   <label class="form-check-label" for="schuheCheckbox">Schuhe</label>
               </div>
           
               <div class="form-check me-4">
-                  <input class="form-check-input" type="checkbox" name="kleiderCheckboxes">
+                  <input class="form-check-input" value="socken" id="sockenCheckbox" type="checkbox" name="kleiderCheckboxes">
                   <label class="form-check-label" for="sockenCheckbox">Socken</label>
               </div>
           
               <div class="form-check me-4">
-                  <input class="form-check-input" type="checkbox" name="kleiderCheckboxes">
+                  <input class="form-check-input" value="decken" id="deckenCheckbox" type="checkbox" name="kleiderCheckboxes">
                   <label class="form-check-label" for="deckenCheckbox">Decken</label>
               </div>
           
               <div class="form-check me-4">
-                  <input class="form-check-input" type="checkbox" name="kleiderCheckboxes">
+                  <input class="form-check-input" value="kissen" id="kissenCheckbox" type="checkbox" name="kleiderCheckboxes">
                   <label class="form-check-label" for="kissenCheckbox">Kissen</label>
               </div>
           
               <div class="form-check me-4">
-                  <input class="form-check-input" type="checkbox" name="kleiderCheckboxes">
+                  <input class="form-check-input" value="sonstiges" id="sonstigesCheckbox" type="checkbox" name="kleiderCheckboxes">
                   <label class="form-check-label" for="sonstigesCheckbox">Sonstiges</label>
               </div>
           </div>
@@ -178,7 +178,7 @@
           <h5>In welches Kriesengebiet soll die Kleidung geschickt werden?</h5>
           <p style="margin: 0;">Wenn "Keine Angabe" ausgewählt ist, schicken wir das Paket dahin, wo es derzeit am meisten gebraucht wird!</p>
           <div class="form-floating">
-            <select id="krisengebiet" class="form-select text-center">
+            <select id="krisengebiet" name="krisengebiet" class="form-select text-center">
                 <option value="unbestimmt">Keine Angabe</option>
                 <option value="afghanistan">Afghanistan</option>
                 <option value="irak">Irak</option>
@@ -200,9 +200,9 @@
               <!--Auswahl der Checkboxen sorgt dafür, dass jeweils passender Inhalt eingeblendet wird. 
               Standardmäßig ist Abgabe im Shop ausgewählt, da dies aus Sicht der Firma sinnvoller erscheint.-->
               <label for="sammeldienst">Sammeldienst</label>
-              <input type="radio" id="sammeldienst" class="me-4" name="sammeldienst-abfrage" onchange="anzeigeSammeldienst()" >
+              <input type="radio" id="sammeldienst" value="sammeldienst" class="me-4" name="sammeldienst-abfrage" onchange="anzeigeSammeldienst()" >
               <label for="abgabe">Abgabe im Shop</label>
-              <input type="radio" id="abgabe" name="sammeldienst-abfrage" onchange="anzeigeSammeldienst()" checked>
+              <input type="radio" id="abgabe" value="abgabe" name="sammeldienst-abfrage" onchange="anzeigeSammeldienst()" checked>
               <br>
               <br>
               <div id="sammeldienstAktiv" style="display: none;">
@@ -210,28 +210,28 @@
                 <div class="flex-container row">
                     <div class="col-md-6">
                         <label for="strasse">Straße: *</label>
-                        <input type="text" id="strasse" placeholder="Musterstraße" class="form-control mb-2 text-center">
+                        <input type="text" id="strasse" name="strasse" placeholder="Musterstraße" class="form-control mb-2 text-center">
                         <div class="invalid-feedback">
                           Bitte tragen Sie hier Ihre Straße ein!
                         </div>   
                     </div>
                     <div class="col-md-6">
-                        <label for="nummer">Nr: *</label>
-                        <input type="text" id="nummer" placeholder="12b" class="form-control mb-2 text-center"> 
+                        <label for="hausnummer">Nr: *</label>
+                        <input type="text" id="hausnummer" name="hausnummer" placeholder="12b" class="form-control mb-2 text-center"> 
                         <div class="invalid-feedback">
                           Bitte tragen Sie hier Ihre Hausnummer ein!
                         </div>  
                     </div>
                     <div class="col-md-6">
                         <label for="plz">Postleitzahl: *</label>
-                        <input type="text" id="plz" placeholder="20095" class="form-control mb-2 text-center" minlength="5" maxlength="5" oninput="validatePLZ(this.value, this)">
+                        <input type="text" id="plz" name="plz" placeholder="20095" class="form-control mb-2 text-center" minlength="5" maxlength="5" oninput="validatePLZ(this.value, this)">
                         <div class="invalid-feedback">
                           Die PLZ muss in 20--- Hamburg liegen, damit wir Ihre Spende abholen können!
                         </div>  
                     </div>
                     <div class="col-md-6">
                         <label for="ort">Stadt: *</label>
-                        <input type="text" id="ort" placeholder="Hamburg" class="form-control mb-2 text-center"> 
+                        <input type="text" id="ort" name="ort" placeholder="Hamburg" class="form-control mb-2 text-center"> 
                         <div class="invalid-feedback">
                           Bitte tragen Sie hier Ihre Stadt ein!
                         </div>  
@@ -247,18 +247,18 @@
           <br>
           <div>
             <h5>Möchten Sie uns noch etwas mitteilen?</h5>
-            <textarea id="comment" rows="3" cols="25"></textarea>
+            <input type="text" class="form-control text-center" id="comment" name="kommentar"></input>
             <br><br>
           </div>
           <div>
             <label for="subscribe" class="me-3">Möchten Sie von uns per Mail auf dem Laufenden gehalten werden?</label>
-            <input type="checkbox" id="subscribe"> <br>
+            <input type="checkbox" id="subscribe" name="subscribe"> <br>
           </div>
           <br>
           <div class="col-12">
             <div class="form-check">
-              <label for="invalidCheck" class="me-3"> Hiermit stimmen Sie unseren Vereinbarungen zum <a class="link" href="./datenschutz.html">Datenschutz</a> zu. *</label>
-              <input type="checkbox" value="" id="invalidCheck" required>
+              <label for="datenschutzCheck" class="me-3"> Hiermit stimmen Sie unseren Vereinbarungen zum <a class="link" href="./datenschutz.html">Datenschutz</a> zu. *</label>
+              <input type="checkbox" value="" id="datenschutzCheck" name="datenschutzCheck" required>
               <div class="invalid-feedback">
                 Sie müssen den Vereinbarungen zustimmen, um eine Spende zu registrieren!
               </div>
@@ -267,7 +267,7 @@
           <br>
           <button type="button" class="btn btn-outline-secondary btn-sm" onclick="resetForm()">Zurücksetzen</button>
           <br>
-          <button type="submit" class="btn btn-primary" onclick="validateCheckboxes()">Registrieren</button>
+          <button type="submit" class="btn btn-primary">Registrieren</button>
           <br>
           <br>
         </form>

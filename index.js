@@ -5,7 +5,7 @@ function anzeigeSammeldienst() {
     let abgabeAktiv = document.getElementById(`abgabeAktiv`);
 
     let strasse = document.getElementById('strasse');
-    let nummer = document.getElementById('nummer');
+    let nummer = document.getElementById('hausnummer');
     let plz = document.getElementById('plz');
     let ort = document.getElementById('ort');
     let phone = document.getElementById(`phone`);
@@ -58,7 +58,7 @@ function validateCheckboxes() {
     // Zeige eine Meldung, wenn keine Checkbox ausgewählt ist
     if (!atLeastOneSelected) {
       checkboxes.forEach(checkbox => {
-        checkbox.setCustomValidity("Fehler");
+        checkbox.setCustomValidity("Bitte wähle mindestens ein Kleidungsstück aus!");
       })
     } else {
       // Hier könntest du das Formular absenden oder weitere Aktionen durchführen
@@ -95,3 +95,45 @@ window.onload = resetForm;
       }, false)
     })
   })()
+
+
+
+    /*const form = document.getElementById('registrierungsFormular');
+    const formData = new FormData(form);
+    const formDataObject = {};
+    formData.forEach((value, key) => {
+    formDataObject[key] = value;
+    });
+
+    localStorage.setItem('formData', JSON.stringify(formDataObject));
+    */
+document.getElementById(`registrierungsFormular`).addEventListener(`submit`, function(event) {
+    validateCheckboxes(event);
+    if(!document.getElementById(`registrierungsFormular`).checkValidity()) {
+      document.getElementById(`registrierungsFormular`).reportValidity();
+    }
+    else {
+      //Speichern der Eingaben im Local Storage
+      const registrierungsFormular = document.getElementById(`registrierungsFormular`);
+      const formData = {};
+      const kleiderCheckboxesList = {};
+
+      for (const element of registrierungsFormular.elements) {
+        // Element der Gruppe kleiderCheckboxes
+        if (element.name == `kleiderCheckboxes`) {
+          kleiderCheckboxesList[element.value] = element.checked;
+        }
+
+        else if (element.name) {
+          // Wenn es eine Checkbox ist, speichere einen booleschen Wert abhängig vom checked-Zustand
+          formData[element.name] = (element.type === 'checkbox') ? element.checked : element.value;
+        }
+      }
+      formData[`kleiderCheckboxes`] = kleiderCheckboxesList;
+
+      localStorage.setItem('formData', JSON.stringify(formData));
+      console.log('Formulardaten im Local Storage:', formData);
+      event.preventDefault();
+      window.location.href = "./registriert.html"
+    }
+  })
