@@ -98,15 +98,6 @@ window.onload = resetForm;
 
 
 
-    /*const form = document.getElementById('registrierungsFormular');
-    const formData = new FormData(form);
-    const formDataObject = {};
-    formData.forEach((value, key) => {
-    formDataObject[key] = value;
-    });
-
-    localStorage.setItem('formData', JSON.stringify(formDataObject));
-    */
 document.getElementById(`registrierungsFormular`).addEventListener(`submit`, function(event) {
     validateCheckboxes(event);
     if(!document.getElementById(`registrierungsFormular`).checkValidity()) {
