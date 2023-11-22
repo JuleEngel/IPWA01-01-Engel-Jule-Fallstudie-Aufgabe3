@@ -74,7 +74,7 @@ function resetForm() {
     anzeigeSammeldienst();
   }
 
-
+window.onload = anzeigeSammeldienst();
 
 // Bootstrap Validierung der Daten
 (() => {
@@ -112,7 +112,11 @@ document.getElementById(`registrierungsFormular`).addEventListener(`submit`, fun
         if (element.name == `kleiderCheckboxes`) {
           kleiderCheckboxesList[element.value] = element.checked;
         }
-
+        else if (element.type == `radio`) {
+          if (element.checked) {
+            formData[element.name] = element.value;
+          }
+        }
         else if (element.name) {
           // Wenn es eine Checkbox ist, speichere einen booleschen Wert abhängig vom checked-Zustand
           formData[element.name] = (element.type === 'checkbox') ? element.checked : element.value;
@@ -127,7 +131,6 @@ document.getElementById(`registrierungsFormular`).addEventListener(`submit`, fun
       formData[`bestelldatum`] = bestelldatum;
 
       let bestellOrt = "";
-
       if (formData[`ort`] != "") {
         bestellOrt = formData[`ort`];
       }
