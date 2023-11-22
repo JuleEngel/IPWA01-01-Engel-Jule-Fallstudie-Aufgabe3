@@ -1,3 +1,11 @@
+/*
+    Student: Jule Engel
+    Modul: IPWA01-01 - Programmierung von Webanwendungen
+    Aufgabe: Fallstudie, Aufgabe 3
+*/
+
+
+/*Einstellugnen für die mobile Ansicht*/
 .navbar-brand {
   font-size: 18px;
 }
@@ -11,7 +19,9 @@
   font-size: 0.8rem;
 }
 
-@media (min-width: 768px) { /* Optische Größenanpassung der Navigations-Leiste für Endgeräte mit größeren Bildschirmen*/
+
+/* Optische Größenanpassung der Navigations-Leiste für Endgeräte mit größeren Bildschirmen*/
+@media (min-width: 768px) { 
   .navbar-brand {
     font-size: 30px;
   }
@@ -29,6 +39,7 @@
   }
 }
 
+/*Stylistische Anpassungen für responsive Darstellung*/
 .flex-container {
   display: flex;
   justify-content: space-between;

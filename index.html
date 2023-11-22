@@ -10,24 +10,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kleiderspenden Hamburg</title>
+    <!--Einbindung eigenes Icon. Quelle: https://de.vecteezy.com/vektorkunst/22804722-kleider-spende-symbol-illustration-box-mit-kleidung-symbol-verbunden-zu-wohltatigkeit-linie-symbol-stil-einfach-vektor-design-editierbar-->
     <link rel="icon" type="image/x-icon" href="/images/4-LOGO.png">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
+    <!--Einbindung von Bootstrap und einem eigenen CSS-Dokument-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./style.css">
-
-    
 </head>
+
+
 <body>
+    <!--Header mit Logo, Titel und einer globalen Navigation-->
     <header>
+        <!--Allgemeines Seitenbanner. Quelle: https://static.street-one.de/out/cms-media/street_one/content_1/sonstiges_1/kleiderspende_1/SO_SOM_unisex_22_K03_Kleiderspende_desk_version2_responsive_desktop_full_width.jpg-->
         <img src="/images/7-Banner.jpg" alt="Banner-Bild für Kleiderspenden" class="img-fluid">
+        <!--Navigationsleiste mit Bootstrap. Titel und Logo der Website. -->
         <nav class="navbar navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
             <div class="container-fluid">
               <a class="navbar-brand" href="./index.html">
                 <img id="logo" src="./images/4-LOGO.png" alt="Logo" class="rounded img-fluid logo" width="50" class="d-inline-block align-text-top">
                 Kleiderspende Hamburg
-              </a>          
+              </a>   
+              <!--"Knopf" für responsive Ansicht-->       
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
               </button>
@@ -56,6 +61,7 @@
       <br>
       <div class="container text-center">
         <h1>Kleiderspende Hamburg</h1>
+        <!--Quelle: https://t4.ftcdn.net/jpg/03/11/89/57/360_F_311895769_ZgTENwVgMB6CbhWGkF1CWDls1RdSWHSw.jpg-->
         <img src="./images/3.jpg" alt="kleiderspende-hamburg" class="img-fluid">
         <h4>Willkommen bei Kleiderspende Hamburg!</h4>
         <p>Wir freuen uns, Sie auf unserer Website begrüßen zu dürfen. Als gemeinnützige Organisation setzen wir uns dafür ein, Menschen in Notlagen zu unterstützen. Ihre Kleiderspenden spielen dabei eine wichtige Rolle.</p>
@@ -73,7 +79,7 @@
         <h1>Registrierung:</h1>
         <br>
 
-<!--Erstellung des Formulars für die Registrierung-->
+        <!--Erstellung des Formulars für die Registrierung mithilfe von "form" und Bootstrap-Form. Validierung mithilfe von Bootstrap-form und index.js-->
         <form class="row g-3 needs-validation" enctype="multipart/form-data" id="registrierungsFormular" novalidate>
           <h5>Informationen zu Ihrer Person: </h5>
           <div>
@@ -86,6 +92,7 @@
 
           <div class="mb-3">
             <label for="vorname" class="form-label">Vorname: * </label>
+            <!--Die Patterns verhindern das Verwenden von < und >, ein erster Schritt, um XSS zu verhindern-->
             <input type="text" id="vorname" name="vorname" placeholder="Max" class="form-control mb-2 text-center" pattern="^[^<>]+$" title="Aus Sicherheitsgründen sind die Zeichen < und > nicht erlaubt." required>
             <div class="invalid-feedback">
               Bitte tragen Sie hier Ihren Namen ein!
@@ -108,6 +115,7 @@
             </div>
           </div>
 
+          <!--Bei der Telefonnummer dürfen lediglich Zahlen von 0-9 und Leerzeichen verwendet werden-->
           <div class="mb-3">
             <label for="phone" class="me-2">Telefon-Nummer: </label>
             <input type="tel" id="phone" name="phone" placeholder="01577 0123456" class="form-control mb-2 text-center" pattern="[0-9 ]+">
@@ -118,6 +126,7 @@
           <br>
 
           <h5>Wie viele Pakete / Tüten mit Kleidung wollen Sie spenden? *</h5>
+          <!--Das Pattern verhindert invalide Eingaben-->
           <div class="mb-3">
             <input type="number" id="anzahl" name="anzahl" min="1" value="0" pattern="[0-9]+" required>
             <div class="invalid-feedback">
@@ -127,6 +136,7 @@
           <br>
 
           <h5>Welche Arten von Kleidungsstücken wollen Sie spenden? *</h5>
+          <!--Validierungsfunktion mit onchange() um sicherzustellen, dass mindestens ein Kleidungsstück ausgewählt wurde-->
           <div class="mb-3 d-flex flex-wrap justify-content-center flex-column flex-sm-row align-items-center">
             <div class="form-check me-4">
                   <input class="form-check-input" value="pullover" id="pulloverCheckbox" type="checkbox" name="kleiderCheckboxes" onchange="validateCheckboxes()">
@@ -177,6 +187,7 @@
 
           <h5>In welches Kriesengebiet soll die Kleidung geschickt werden?</h5>
           <p style="margin: 0;"><i>Wenn "Keine Angabe" ausgewählt ist, schicken wir das Paket dahin, wo es derzeit am meisten gebraucht wird!</i></p>
+          <!--Auswahl des Krisengebietes aus Liste mit nur einer Wahlmöglichkeit-->
           <div class="form-floating">
             <select id="krisengebiet" name="krisengebiet" class="form-select text-center">
                 <option value="unbestimmt">Keine Angabe</option>
@@ -195,16 +206,18 @@
           </div>
           <br>
           <div>
-            <h5>Wollen Sie unseren Sammeldienst nutzen? *</h5>
+            <!--Aufgabe 3.b.e-g-->
+            <h5>Wollen Sie eine Abholung durch unseren Sammeldienst nutzen? *</h5>
             <div>
-              <!--Auswahl der Checkboxen sorgt dafür, dass jeweils passender Inhalt eingeblendet wird. 
-              Standardmäßig ist Abgabe im Shop ausgewählt, da dies aus Sicht der Firma sinnvoller erscheint.-->
-              <label for="sammeldienst">Sammeldienst</label>
+              <!--Auswahl der Checkboxen sorgt dafür, dass jeweils passender Inhalt eingeblendet wird. Dies bewirkt die Funktion "anzeigeSammeldienst()". 
+              Standardmäßig ist Abgabe an der Geschäftsstelle ausgewählt, da dies aus Sicht der Firma sinnvoller erscheint.-->
+              <label for="sammeldienst">Abholung</label>
               <input type="radio" id="sammeldienst" value="sammeldienst" class="me-4" name="sammeldienstAbfrage" onchange="anzeigeSammeldienst()" >
-              <label for="abgabe">Abgabe im Shop</label>
+              <label for="abgabe">Übergabe an der Geschäftsstelle</label>
               <input type="radio" id="abgabe" value="abgabe" name="sammeldienstAbfrage" onchange="anzeigeSammeldienst()" checked>
               <br>
               <br>
+              <!--Adresse wird nur benötigt, wenn eine Abholung erfolgen soll-->
               <div id="sammeldienstAktiv" style="display: none;">
                 <h5>Ihre Adresse:</h5>
                 <div class="flex-container row">
@@ -222,6 +235,8 @@
                           Bitte tragen Sie hier Ihre Hausnummer ein!
                         </div>  
                     </div>
+                    <!--Bei der Eingabe der Postleitzahl wird eine zusätzliche Validierung ausgeführt, um sicherzustellen, dass die PLZ im Einzugsgebiet der Firma ist.
+                    Aufgabe 3.b.h -->
                     <div class="col-md-6">
                         <label for="plz">Postleitzahl: *</label>
                         <input type="text" id="plz" name="plz" placeholder="20095" class="form-control mb-2 text-center" minlength="5" maxlength="5" oninput="validatePLZ(this.value, this)">
@@ -240,7 +255,7 @@
                 </div>
             </div>
               <div id="abgabeAktiv">
-                <i>Bei der Registrierung wird Ihre Spende lediglich vorgemerkt. Vor Ort können Sie mithilfe Ihrer E-Mail-Adresse und der Postleitzahl Ihre Angaben dann wieder aufrufen. Unsere Abgabestelle befindet sich in der Musterstraße 123, 20095 Hamburg. Die Öffnungszeiten sind Mo.- Sa. 10-17 Uhr.</i>
+                <i>Bei der Registrierung wird Ihre Spende lediglich vorgemerkt. Vor Ort können Sie mithilfe Ihrer E-Mail-Adresse Ihre Angaben dann wieder aufrufen. Unsere Abgabestelle befindet sich in der Musterstraße 123, 20095 Hamburg. Die Öffnungszeiten sind Mo.- Sa. 10-17 Uhr.</i>
               </div>
             </div>
           </div>
@@ -252,10 +267,7 @@
               Aus Sicherheitsgründen sind die Zeichen < und > nicht erlaubt.
             </div>  
           </div>
-          <div>
-            <label for="subscribe" class="me-3">Möchten Sie von uns per Mail auf dem Laufenden gehalten werden?</label>
-            <input type="checkbox" id="subscribe" name="subscribe"> <br>
-          </div>
+          <!--Aus rechtlichen Gründen erfolgt eine Aufforderung zur Einwilligung des Datenschutzes. Dies ist hier nur beispielhaft dargestellt-->
           <div class="col-12">
             <div class="form-check">
               <label for="datenschutzCheck" class="me-3"> Hiermit stimmen Sie unseren Vereinbarungen zum <a class="link" href="./datenschutz.html">Datenschutz</a> zu. *</label>
@@ -278,7 +290,7 @@
 
 
 
-
+    <!--Footer mit Informationen und Rechtlichem-->
     <footer class="bg-dark text-light p-2 m-0">
         <br>
         <div class="container flex-container align-items-stretch">
