@@ -55,24 +55,40 @@
       <img src="./images/5.png" alt="kleiderspende-hamburg" class="img-fluid">
       <h1>Vielen Dank!</h1>
       <p>Die Registrierung wurde erfolgreich abgeschlossen!</p>
-      <p>Hier ein Überblick über Ihre Daten!</p>
+      <br>
+      <h3>Hier ein Überblick über die Registrierung!</h3>
+      <br>
       <div>
-        <p id="registriertName">Name: </p>
-        <p id="registriertEmail">Email: </p>
-        <p id="registriertPhone">Telefonnummer: </p>
-        <p id="registriertAnzahlPakete">Pakete: </p>
-        <div>
-          <p>Das spenden Sie uns: </p>
-          <p id="registriertKleidung"></p>
-        </div>
-        <p id="registriertKrisengebiet">Ankunftsland: </p>
-        <p id="registriertSammelAbgabe"></p>
-        <div id="registriertSammelfahrzeug">
-          <p>Ihre Adresse:</p>
-          <p id="registriertStrasseHausnummer"></p>
-          <p id="registriertPlzOrt"></p>
-        </div>
+        <h5>Zeitpunkt der Registrierung:</h5>
+        <p id="registriertDatum"></p>
       </div>
+      <br>
+      <div>
+        <h5>Ihre persönlichen Daten: </h5>
+        <p id="registriertName"></p>
+        <p id="registriertEmail"></p>
+        <p id="registriertPhone"></p>
+        <p id="registriertAdresse"></p>
+        <div>
+          <span id="existiertKommentar"></span>
+          <i id="registriertKommentar"></i>
+        </div>
+        <br>
+      </div>
+      <br>
+      <div>
+        <h5>Angaben zu Ihrer Spende: </h5>
+        <p id="registriertAnzahlPakete"></p>
+        <p id="registriertKleidung"></p>
+        <p id="registriertKrisengebiet"></p>
+      </div>
+      <br>
+      <div>
+        <h5 id="abgabeMethode"></h5>
+        <i id="registriertAbgabe"></i>
+        <i id="registriertSammelfahrzeug"></i>
+      </div>
+      <br>
     </div>
     <br>
   </main>
@@ -119,4 +135,5 @@
         </div>
   </footer>
 </body>
+<script src="registriert.js"></script>
 </html>

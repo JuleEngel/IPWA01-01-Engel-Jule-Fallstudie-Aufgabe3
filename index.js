@@ -125,21 +125,21 @@ document.getElementById(`registrierungsFormular`).addEventListener(`submit`, fun
       formData[`kleider`] = kleiderCheckboxesList;
 
       let datum = new Date();
-      bestelldatum = datum.toLocaleDateString('de-DE', { year: 'numeric', month: '2-digit', day: '2-digit' });
-      let bestellzeit = formatZeroes(datum.getHours()) + ":" + formatZeroes(datum.getMinutes()) + ":" + formatZeroes(datum.getSeconds());
-      formData[`bestellzeit`] = bestellzeit;
-      formData[`bestelldatum`] = bestelldatum;
+      let registrierDatum = datum.toLocaleDateString('de-DE', { year: 'numeric', month: '2-digit', day: '2-digit' });
+      let registrierZeit = formatZeroes(datum.getHours()) + ":" + formatZeroes(datum.getMinutes()) + ":" + formatZeroes(datum.getSeconds());
+      formData[`registrierZeit`] = registrierZeit;
+      formData[`registrierDatum`] = registrierDatum;
 
-      let bestellOrt = "";
+      let registrierOrt = "";
       if (formData[`ort`] != "") {
-        bestellOrt = formData[`ort`];
+        registrierOrt = formData[`ort`];
       }
-      formData[`bestellOrt`] = bestellOrt;
+      formData[`registrierOrt`] = registrierOrt;
 
       localStorage.setItem('formData', JSON.stringify(formData));
       console.log('Formulardaten im Local Storage:', formData);
       event.preventDefault();
-      //window.location.href = "./registriert.html"
+      window.location.href = "./registriert.html"
 
       //Anpassung Darstellung Zeit
       function formatZeroes(time) {
