@@ -35,7 +35,7 @@
                     <a class="nav-link" href="./index.html">Home</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="./information.html">Informationen</a>
+                    <a class="nav-link" href="./information.html">Informationen</a>
                   </li>
                   <li class="nav-item">
                     <a class="nav-link" href="./about-us.html">Über uns</a>
@@ -56,11 +56,23 @@
       <h1>Vielen Dank!</h1>
       <p>Die Registrierung wurde erfolgreich abgeschlossen!</p>
       <p>Hier ein Überblick über Ihre Daten!</p>
-      <script>
-        const storedData = localStorage.getItem('formData');
-
-
-      </script>
+      <div>
+        <p id="registriertName">Name: </p>
+        <p id="registriertEmail">Email: </p>
+        <p id="registriertPhone">Telefonnummer: </p>
+        <p id="registriertAnzahlPakete">Pakete: </p>
+        <div>
+          <p>Das spenden Sie uns: </p>
+          <p id="registriertKleidung"></p>
+        </div>
+        <p id="registriertKrisengebiet">Ankunftsland: </p>
+        <p id="registriertSammelAbgabe"></p>
+        <div id="registriertSammelfahrzeug">
+          <p>Ihre Adresse:</p>
+          <p id="registriertStrasseHausnummer"></p>
+          <p id="registriertPlzOrt"></p>
+        </div>
+      </div>
     </div>
     <br>
   </main>

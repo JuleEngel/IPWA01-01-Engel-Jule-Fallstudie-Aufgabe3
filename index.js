@@ -74,8 +74,6 @@ function resetForm() {
     anzeigeSammeldienst();
   }
 
-// Das Formular zurücksetzen, wenn die Seite geladen wird
-window.onload = resetForm;
 
 
 // Bootstrap Validierung der Daten
@@ -97,7 +95,7 @@ window.onload = resetForm;
   })()
 
 
-
+//Hinzufügen Eingaben zum lokalen Speicher
 document.getElementById(`registrierungsFormular`).addEventListener(`submit`, function(event) {
     validateCheckboxes(event);
     if(!document.getElementById(`registrierungsFormular`).checkValidity()) {
@@ -120,11 +118,30 @@ document.getElementById(`registrierungsFormular`).addEventListener(`submit`, fun
           formData[element.name] = (element.type === 'checkbox') ? element.checked : element.value;
         }
       }
-      formData[`kleiderCheckboxes`] = kleiderCheckboxesList;
+      formData[`kleider`] = kleiderCheckboxesList;
+
+      let datum = new Date();
+      bestelldatum = datum.toLocaleDateString('de-DE', { year: 'numeric', month: '2-digit', day: '2-digit' });
+      let bestellzeit = formatZeroes(datum.getHours()) + ":" + formatZeroes(datum.getMinutes()) + ":" + formatZeroes(datum.getSeconds());
+      formData[`bestellzeit`] = bestellzeit;
+      formData[`bestelldatum`] = bestelldatum;
+
+      let bestellOrt = "";
+
+      if (formData[`ort`] != "") {
+        bestellOrt = formData[`ort`];
+      }
+      formData[`bestellOrt`] = bestellOrt;
 
       localStorage.setItem('formData', JSON.stringify(formData));
       console.log('Formulardaten im Local Storage:', formData);
       event.preventDefault();
-      window.location.href = "./registriert.html"
+      //window.location.href = "./registriert.html"
+
+      //Anpassung Darstellung Zeit
+      function formatZeroes(time) {
+        time = time.toString();
+        return time.length < 2 ? "0" + time : time;
+    }
     }
   })

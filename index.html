@@ -86,7 +86,7 @@
 
           <div class="mb-3">
             <label for="vorname" class="form-label">Vorname: * </label>
-            <input type="text" id="vorname" name="vorname" placeholder="Max" class="form-control mb-2 text-center" required>
+            <input type="text" id="vorname" name="vorname" placeholder="Max" class="form-control mb-2 text-center" pattern="^[^<>]+$" title="Aus Sicherheitsgründen sind die Zeichen < und > nicht erlaubt." required>
             <div class="invalid-feedback">
               Bitte tragen Sie hier Ihren Namen ein!
             </div>       
@@ -94,7 +94,7 @@
 
           <div class="mb-3">
             <label for="nachname" class="me-2">Nachname: *</label>
-            <input type="text" id="nachname" name="nachname" placeholder="Mustermann" class="form-control mb-2 text-center" required> 
+            <input type="text" id="nachname" name="nachname" placeholder="Mustermann" class="form-control mb-2 text-center" pattern="^[^<>]+$" title="Aus Sicherheitsgründen sind die Zeichen < und > nicht erlaubt." required> 
             <div class="invalid-feedback">
               Bitte tragen Sie hier Ihren Nachnamen ein!
             </div>
@@ -102,7 +102,7 @@
 
           <div class="mb-3">
             <label for="email" class="me-2">E-Mail-Adresse: *</label>
-            <input type="email" id="email" name="email" placeholder="mustermann@gmail.com" class="form-control mb-2 text-center" required>
+            <input type="email" id="email" name="email" placeholder="mustermann@gmail.com" class="form-control mb-2 text-center" pattern="^[^<>]+$" title="Aus Sicherheitsgründen sind die Zeichen < und > nicht erlaubt." required>
             <div class="invalid-feedback">
               Bitte tragen Sie hier eine gültige E-Mail-Adresse ein, damit wir Sie kontaktieren können!
             </div>
@@ -176,7 +176,7 @@
           <br>
 
           <h5>In welches Kriesengebiet soll die Kleidung geschickt werden?</h5>
-          <p style="margin: 0;">Wenn "Keine Angabe" ausgewählt ist, schicken wir das Paket dahin, wo es derzeit am meisten gebraucht wird!</p>
+          <p style="margin: 0;"><i>Wenn "Keine Angabe" ausgewählt ist, schicken wir das Paket dahin, wo es derzeit am meisten gebraucht wird!</i></p>
           <div class="form-floating">
             <select id="krisengebiet" name="krisengebiet" class="form-select text-center">
                 <option value="unbestimmt">Keine Angabe</option>
@@ -210,14 +210,14 @@
                 <div class="flex-container row">
                     <div class="col-md-6">
                         <label for="strasse">Straße: *</label>
-                        <input type="text" id="strasse" name="strasse" placeholder="Musterstraße" class="form-control mb-2 text-center">
+                        <input type="text" id="strasse" name="strasse" placeholder="Musterstraße" class="form-control mb-2 text-center" pattern="^[^<>]+$" title="Aus Sicherheitsgründen sind die Zeichen < und > nicht erlaubt.">
                         <div class="invalid-feedback">
                           Bitte tragen Sie hier Ihre Straße ein!
                         </div>   
                     </div>
                     <div class="col-md-6">
                         <label for="hausnummer">Nr: *</label>
-                        <input type="text" id="hausnummer" name="hausnummer" placeholder="12b" class="form-control mb-2 text-center"> 
+                        <input type="text" id="hausnummer" name="hausnummer" placeholder="12b" class="form-control mb-2 text-center" pattern="^[^<>]+$" title="Aus Sicherheitsgründen sind die Zeichen < und > nicht erlaubt."> 
                         <div class="invalid-feedback">
                           Bitte tragen Sie hier Ihre Hausnummer ein!
                         </div>  
@@ -231,7 +231,7 @@
                     </div>
                     <div class="col-md-6">
                         <label for="ort">Stadt: *</label>
-                        <input type="text" id="ort" name="ort" placeholder="Hamburg" class="form-control mb-2 text-center"> 
+                        <input type="text" id="ort" name="ort" placeholder="Hamburg" class="form-control mb-2 text-center" pattern="^[^<>]+$" title="Aus Sicherheitsgründen sind die Zeichen < und > nicht erlaubt."> 
                         <div class="invalid-feedback">
                           Bitte tragen Sie hier Ihre Stadt ein!
                         </div>  
@@ -247,14 +247,15 @@
           <br>
           <div>
             <h5>Möchten Sie uns noch etwas mitteilen?</h5>
-            <input type="text" class="form-control text-center" id="comment" name="kommentar"></input>
-            <br><br>
+            <input type="text" class="form-control text-center" id="comment" name="kommentar" pattern="^[^<>]+$" title="Aus Sicherheitsgründen sind die Zeichen < und > nicht erlaubt."></input>
+            <div class="invalid-feedback">
+              Aus Sicherheitsgründen sind die Zeichen < und > nicht erlaubt.
+            </div>  
           </div>
           <div>
             <label for="subscribe" class="me-3">Möchten Sie von uns per Mail auf dem Laufenden gehalten werden?</label>
             <input type="checkbox" id="subscribe" name="subscribe"> <br>
           </div>
-          <br>
           <div class="col-12">
             <div class="form-check">
               <label for="datenschutzCheck" class="me-3"> Hiermit stimmen Sie unseren Vereinbarungen zum <a class="link" href="./datenschutz.html">Datenschutz</a> zu. *</label>
